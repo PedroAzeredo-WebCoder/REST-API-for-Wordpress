@@ -23,7 +23,7 @@ Um repositório com um template inicial para iniciar novos projetos em Wordpress
 
 5 - agora desenvolva htmls, css e ja de forma organizada e padronizada
 
-6 - Todos seus arquivos .php, pasta upload devem ser criados na pasta /s3 que vai se tornar o tema no wordpress após conclusão dos HTMLs
+6 - Todos seus arquivos .php, pasta upload devem ser criados na pasta /thema que vai se tornar o tema no wordpress após conclusão dos HTMLs
 
 7 - por fim procure se divertir, de séria já chega a vida =]
 
@@ -36,9 +36,9 @@ Um repositório com um template inicial para iniciar novos projetos em Wordpress
 
 3 - Exclua os temas padrões 
 
-4 - Mova a pasta `s3` para `wp-content/themes/` 
+4 - Mova a pasta `thema` para `wp-content/themes/` 
 
-5 - Edita o arquivo `style.css` em `wp-content/themes/s3` com os dados do projeto
+5 - Edita o arquivo `style.css` em `wp-content/themes/thema` com os dados do projeto
 
 6 - rode `npm install` ou `npm run watch` na raiz do projeto
 
@@ -86,11 +86,11 @@ Ajuda: [acessar](https://www.hastedesign.com.br/wordpress/como-instalar-o-wordpr
 
 13 - (*) Advanced Contact form 7 DB - [download](https://br.wordpress.org/plugins/advanced-cf7-db/)
 
-14 - (*) EWWW Image Optimizer - [download](hthttps://wordpress.org/plugins/ewww-image-optimizer/)
+14 - (*) EWWW Image Optimizer - [download](https://wordpress.org/plugins/ewww-image-optimizer/)
 
 15 - (*) NitroPack - [download](https://wordpress.org/plugins/nitropack/)
 
 16 - (*) Disqus - [download](https://br.wordpress.org/plugins/disqus-comment-system/)
 
-17 - ACF Fton Awesove - [download](https://br.wordpress.org/plugins/advanced-custom-fields-font-awesome/)
+17 - ACF Font Awesome - [download](https://br.wordpress.org/plugins/advanced-custom-fields-font-awesome/)
 

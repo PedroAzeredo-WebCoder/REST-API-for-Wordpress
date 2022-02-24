@@ -5,9 +5,9 @@ const fs = require('fs');
 const dir = './wp-content';
 
 if (fs.existsSync(dir)) {
-    var dirRaiz = "./wp-content/themes/s3/assets";
+    var dirRaiz = "./wp-content/themes/thema/assets";
 } else {
-    var dirRaiz = "./s3/assets";
+    var dirRaiz = "./thema/assets";
 }
 
 mix.options({
@@ -45,6 +45,20 @@ mix.sass('resources/scss/app.scss', dirRaiz + '/css')
 mix.copyDirectory('resources/img', dirRaiz + '/img');
 
 /**
+ * Slick Images
+ */
+mix.copyDirectory(
+    'node_modules/slick-carousel/slick/fonts/',
+    dirRaiz + '/fonts'
+);
+
+mix.copyDirectory(
+    'node_modules/slick-carousel/slick/ajax-loader.gif',
+    dirRaiz + '/img'
+);
+
+/**
+ * 
  * Arquivos de fontes
  */
 mix.copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts/', dirRaiz + '/fonts');
