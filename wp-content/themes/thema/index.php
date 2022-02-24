@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <main>
     <div class="container">
-        <div class="row">
+        <div class="row pt-5">
             <div class="col-lg-8">
                 <div class="row">
                     <?php for ($countPost = 1; $countPost <= 6; $countPost++) : ?>

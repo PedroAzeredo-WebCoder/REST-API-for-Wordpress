@@ -29,7 +29,7 @@
 
     <?php wp_body_open(); ?>
 
-    <header>
+    <header class="fixed-top">
         <nav class="navbar navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#">
