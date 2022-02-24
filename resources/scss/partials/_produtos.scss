@@ -1,0 +1,33 @@
+.card {
+    .slider-produto {
+        img {
+            max-height: 280px;
+            object-fit: cover;
+        }
+
+        .slick-dots {
+            width: 100%;
+            bottom: 0;
+            padding: 0;
+
+            button {
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background-color: $primary;
+                opacity: 0.4;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            .slick-active {
+                & button {
+                    background-color: $primary;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

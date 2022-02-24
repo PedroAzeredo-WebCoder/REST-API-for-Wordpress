@@ -104,4 +104,15 @@ jQuery(function () {
             alert("Você digitou um endereço de e-mail inválido!");
         }
     });
+
+    $('.slider-produto').slick({
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		arrows: false,
+		dots: true,
+		focusOnSelect: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	})
 });
