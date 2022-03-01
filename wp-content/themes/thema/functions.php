@@ -9,3 +9,5 @@ include 'inc/custom_post_types.php';
 include 'inc/custom_functions.php';
 include 'inc/widgets.php';
 include 'inc/class-wp-bootstrap-navwalker.php';
+include 'inc/endpoints/routes.php';
+include 'inc/endpoints/usuarios/usuario_post.php';
