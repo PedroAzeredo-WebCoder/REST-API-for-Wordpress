@@ -38,3 +38,16 @@ function registrar_api_usuario_put()
 }
 
 add_action('rest_api_init', 'registrar_api_usuario_put');
+
+/* Produto POST */
+function registrar_api_produto_post()
+{
+    register_rest_route('api', '/produto', array(
+        array(
+            'methods' => WP_REST_Server::CREATABLE,
+            'callback' => 'api_produto_post',
+        ),
+    ));
+}
+
+add_action('rest_api_init', 'registrar_api_produto_post');
