@@ -11,3 +11,4 @@ include 'inc/widgets.php';
 include 'inc/class-wp-bootstrap-navwalker.php';
 include 'inc/endpoints/routes.php';
 include 'inc/endpoints/usuarios/usuario_post.php';
+include 'inc/endpoints/usuarios/usuario_get.php';
