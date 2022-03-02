@@ -25,3 +25,16 @@ function registrar_api_usuario_get()
 }
 
 add_action('rest_api_init', 'registrar_api_usuario_get');
+
+/* Usuario PUT */
+function registrar_api_usuario_put()
+{
+    register_rest_route('api', '/usuario', array(
+        array(
+            'methods' => WP_REST_Server::EDITABLE,
+            'callback' => 'api_usuario_put',
+        ),
+    ));
+}
+
+add_action('rest_api_init', 'registrar_api_usuario_put');
