@@ -38,6 +38,12 @@ define( 'DB_CHARSET', 'utf8mb4' );
 define( 'DB_COLLATE', '' );
 
 define('FS_METHOD', 'direct');
+
+/** Para adicionar a chave secreta , edite seu arquivo wp-config.php e adicione uma nova constante chamada JWT_AUTH_SECRET_KEY */
+define('JWT_AUTH_SECRET_KEY', '#h]xE1h5 {Wv.E$VgTd5zX)=s!uLjYE-kbLSsXR]H?)Ql.|Q$)H(mhIc$~]9mrS@');
+
+/** Para habilitar o CORs Support edite seu arquivo wp-config.php e adicione uma nova constante chamada JWT_AUTH_CORS_ENABLE */
+define('JWT_AUTH_CORS_ENABLE', true);
 /**#@+
  * Chaves únicas de autenticação e salts.
  *
