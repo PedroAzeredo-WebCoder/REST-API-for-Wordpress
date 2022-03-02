@@ -84,11 +84,13 @@ function s3_logo_title()
     }
 }
 
-function s3_nome_agencia(){
+function s3_nome_agencia()
+{
     echo 'Agência S3';
 }
 
-function countCatPerPost($termID){
+function countCatPerPost($termID)
+{
     $posts = get_posts('post_type=post&category=' . $termID);
     $count = count($posts);
     echo $count;
@@ -100,3 +102,9 @@ function countTagPerPost($termID)
     $count = $term->count;
     echo $count;
 }
+
+function resetToken()
+{
+    return time() + (60 * 60 * 24);
+}
+add_action('jkt_auth_expire', 'resetToken');

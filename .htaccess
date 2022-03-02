@@ -3,7 +3,6 @@
 # As diretrizes (linhas) entre "BEGIN WordPress" e "END WordPress" são
 # geradas dinamicamente e só devem ser modificadas através de filtros do WordPress.
 # Quaisquer alterações nas diretivas entre esses marcadores serão sobrescritas.
-SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -12,9 +11,6 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /REST-API-for-Wordpress/index.php [L]
-RewriteEngine on
-RewriteCond %{HTTP:Authorization} ^(.*)
-RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 </IfModule>
 
 # END WordPress
