@@ -13,3 +13,4 @@ include 'inc/endpoints/routes.php';
 include 'inc/endpoints/usuarios/usuario_post.php';
 include 'inc/endpoints/usuarios/usuario_get.php';
 include 'inc/endpoints/usuarios/usuario_put.php';
+include 'inc/endpoints/produtos/produto_post.php';

@@ -5,44 +5,44 @@ function api_produto_post($request)
     $user = wp_get_current_user();
     $user_id = $user->ID;
 
-    if ($user_id != 0) {
-
+    if ($user_id > 0) {
         $nome = sanitize_text_field($request['nome']);
-        $email = sanitize_email($request['email']);
-        $senha = sanitize_text_field($request['senha']);
-        $nome = sanitize_text_field($request['nome']);
-        $rua = sanitize_text_field($request['rua']);
-        $cep = sanitize_text_field($request['cep']);
-        $numero = sanitize_text_field($request['numero']);
-        $bairro = sanitize_text_field($request['bairro']);
-        $cidade = sanitize_text_field($request['cidade']);
-        $estado = sanitize_text_field($request['estado']);
+        $preco = sanitize_text_field($request['preco']);
+        $descricao = sanitize_text_field($request['descricao']);
+        $genero = sanitize_text_field($request['genero']);
+        $usuario_id = $user->user_login;
 
-        $email_exists = email_exists($email);
+        $response = array(
+            'post_author' => $usuario_id,
+            'post_type' => 'produto',
+            'post_title' => $nome,
+            'post_content' => $descricao,
+            'post_status' => 'publish',
+            'meta_input' => array(
+                'preco' => $preco,
+                'vendido' => 'false',
+            ),
+            'acf' => array(
+                "genero" => $genero
+            ),
+        );
 
-        if (!$email_exists || $email_exists === $user_id) {
+        $produto_id = wp_insert_post($response);
+        $response['id'] = get_post_field('post_name', $produto_id);
 
-            $response = array(
-                'ID' => $user_id,
-                'display_name' => $nome,
-                'first_name' => $nome,
-                'user_pass' => $senha,
-                'user_email' => $email
-            );
+        // $files = $request->get_file_params();
 
-            wp_update_user($response);
+        // if ($files) {
+        //     require_once(ABSPATH . 'wp-admin/includes/image.php');
+        //     require_once(ABSPATH . 'wp-admin/includes/file.php');
+        //     require_once(ABSPATH . 'wp-admin/includes/media.php');
 
-            update_user_meta($user_id, 'rua', $rua);
-            update_user_meta($user_id, 'cep', $cep);
-            update_user_meta($user_id, 'numero', $numero);
-            update_user_meta($user_id, 'bairro', $bairro);
-            update_user_meta($user_id, 'cidade', $cidade);
-            update_user_meta($user_id, 'estado', $estado);
-        } else {
-            $response = new WP_Error('email', 'Desculpe este e-mail ja está sendo usado.', array('status' => 403));
-        }
+        //     foreach ($files as $file => $array) {
+        //         media_handle_upload($file, $produto_id);
+        //     }
+        // }
     } else {
-        $response = new WP_Error('permissao', 'Usuário não possui permiassão.', array('status' => 401));
+        $response = new WP_Error('permissao', 'Usuário não possui permissão.', array('status' => 401));
     }
     return rest_ensure_response($response);
 }
